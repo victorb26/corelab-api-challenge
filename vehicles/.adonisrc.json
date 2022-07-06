@@ -15,9 +15,6 @@
   "preloads": ["./start/routes", "./start/kernel"],
   "providers": ["./providers/AppProvider", "@adonisjs/core"],
   "aceProviders": ["@adonisjs/repl"],
-  "namespaces": {
-    "httpControllers": "App/Controllers"
-  },
   "tests": {
     "suites": [
       {
