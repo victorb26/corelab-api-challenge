@@ -15,7 +15,7 @@ export default class Veiculo extends BaseModel {
   public plate: string
 
   @column()
-  public isFavorite: boolean
+  public favorite: boolean
 
   @column()
   public year: number
