@@ -20,4 +20,8 @@
 
 import Route from '@ioc:Adonis/Core/Route'
 
-Route.post("/vehicles", "VehiclesController.create");
+Route.group(() => {
+  Route.get('/', async () => {
+    return { hello: 'world' }
+  })
+}).prefix('/api')
