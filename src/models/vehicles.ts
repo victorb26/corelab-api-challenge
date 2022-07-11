@@ -18,6 +18,12 @@ const insertVehicle = async (vehicle: Vehicles) =>{
     return retorno [0].Id as  number | undefined;
 }
 
+const listVehicles = async () => {
+    const retorno = await dbQuery('SELECT * FROM vehicle');
+    return retorno as Vehicles[];
+}
+
 export const vehicleModel = {
-    insertVehicle
+    insertVehicle,
+    listVehicles
 }

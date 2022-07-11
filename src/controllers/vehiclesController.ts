@@ -23,6 +23,17 @@ const insertVehicle = (req: Request, res: Response) => {
   .catch(err => internalServerError(res,err));
 };
 
+const listVehicles = (req: Request, res: Response) =>{
+    vehicleModel.listVehicles()
+  .then(vehicles =>{
+    res.json({
+        vehicles
+    })
+  })
+  .catch(err => internalServerError(res,err));
+}
+
 export const vehicleController = {
-    insertVehicle
+    insertVehicle,
+    listVehicles
 }
