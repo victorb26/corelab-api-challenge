@@ -9,20 +9,26 @@ export const openConnection = () =>{
  return db;
 }
 
+export const dbQueryFirst = async(query: string, params?: any[]) =>{
+const  retorno = await dbQuery (query,params);
+return retorno [0];
+}
 
-export const dbQuery = (query: string, params?: any[]) =>{
+export const dbQuery = async (query: string, params?: any[]) =>{
 let db = openConnection();
-return new Promise<any[]>((resolve, reject) => {
-    db.all(query,params,(err,rows) =>{
-        if(err)
-        reject(err);
+    try {
+        return await new Promise<any[]>((resolve, reject) => {
+            db.all(query, params, (err, rows) => {
+                if (err)
+                    reject(err);
 
-        else
-        resolve(rows);
-    })
-})
-.finally(() =>{
-    db.close();
-})
+
+                else
+                    resolve(rows);
+            });
+        });
+    } finally {
+        db.close();
+    }
 
 }
