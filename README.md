@@ -40,7 +40,7 @@ Por fim, para executar o projeto, o comando `node server.js` deve ser inserido n
 #### **Rotas**
 ---
 
-**As entidades disponíveis no banco de dados são: cliente, funcionário, fornecedor, hardware e software.**
+
 
 - **GET**
     - **Consulte todas as instâncias da entidade**
